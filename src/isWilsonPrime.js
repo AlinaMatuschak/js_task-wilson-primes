@@ -19,7 +19,19 @@
  * @return {boolean}
  */
 function isWilsonPrime(num) {
-  // write code here
+  const resNumber = (getProduct(num - 1) + 1) / num ** 2;
+
+  return resNumber - Math.floor(resNumber) === 0;
 }
+
+const getProduct = (number) => {
+  let res = number;
+
+  for (let i = number - 1; i > 0; i--) {
+    res *= i;
+  }
+
+  return res;
+};
 
 module.exports = isWilsonPrime;
